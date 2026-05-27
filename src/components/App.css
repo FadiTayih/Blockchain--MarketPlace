@@ -1,1 +1,210 @@
-/* Styles go here */
+/* ---------- Global Theme ---------- */
+:root {
+  --primary: #4f46e5;
+  --primary-dark: #4338ca;
+  --primary-light: #818cf8;
+  --success: #10b981;
+  --danger: #ef4444;
+  --dark: #1e293b;
+  --gray-bg: #f1f5f9;
+  --white: #ffffff;
+  --text-main: #334155;
+  --text-muted: #64748b;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --radius: 0.75rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
+  color: var(--text-main);
+  padding-top: 70px; /* fixed navbar offset */
+  margin: 0;
+  min-height: 100vh;
+}
+
+/* ---------- Navbar Overrides ---------- */
+.navbar {
+  background: var(--dark) !important;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.35rem;
+  letter-spacing: -0.5px;
+  color: var(--white) !important;
+}
+
+.navbar .text-white {
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+/* ---------- Cards & Layout ---------- */
+.container-fluid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.card {
+  background: var(--white);
+  border: none;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.card-body {
+  padding: 1.75rem;
+}
+
+.card-title {
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--dark);
+  margin-bottom: 1rem;
+}
+
+/* Product card special styling */
+.product-card {
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.product-card .card-title {
+  font-size: 1.25rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.product-card .badge {
+  font-size: 0.8rem;
+  padding: 0.4em 0.8em;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.badge-secondary {
+  background: #94a3b8;
+}
+
+.badge-info {
+  background: var(--primary);
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  border-radius: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background: var(--primary);
+  border: none;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-success {
+  background: var(--success);
+  border: none;
+}
+
+.btn-success:hover:not(:disabled) {
+  background: #059669;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+/* Button spinner alignment */
+.spinner-border-sm {
+  vertical-align: middle;
+}
+
+/* ---------- Form Elements ---------- */
+.form-control {
+  border-radius: 0.5rem;
+  border: 1px solid #cbd5e1;
+  padding: 0.6rem 1rem;
+  font-size: 0.95rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-control:focus {
+  border-color: var(--primary-light);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+/* ---------- Alerts ---------- */
+.alert {
+  border-radius: var(--radius);
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.alert-danger {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #b91c1c;
+}
+
+/* ---------- Loading Spinner ---------- */
+.spinner-border {
+  color: var(--primary);
+}
+
+/* ---------- Empty State ---------- */
+.text-center p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  padding: 2rem 0;
+}
+
+/* ---------- Utilities ---------- */
+.mt-5 {
+  margin-top: 3rem !important;
+}
+
+/* ---------- Responsive Tweaks ---------- */
+@media (max-width: 768px) {
+  .card-body {
+    padding: 1.25rem;
+  }
+  .product-card .card-title {
+    font-size: 1.1rem;
+  }
+}
